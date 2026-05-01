@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Math Mastery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#282a36">
+    <link rel="apple-touch-icon" href="icon-192.png">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="selectors">
+                <select id="mode-select">
+                    <option value="discount">Discounts</option>
+                    <option value="multistep">Multi-Step</option>
+                    <option value="multiply">Multiplication</option>
+                </select>
+                <select id="difficulty-select">
+                    <option value="easy">Easy</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            <div class="score-board">
+                Score: <span id="score">0</span>
+            </div>
+        </header>
+
+        <main>
+            <div id="feedback-banner" class="hidden">Correct!</div>
+            
+            <div class="problem-container">
+                <div id="problem-text">Loading...</div>
+                <div class="input-display" id="user-input"></div>
+            </div>
+        </main>
+
+        <div class="numpad">
+            <button class="num-btn">1</button>
+            <button class="num-btn">2</button>
+            <button class="num-btn">3</button>
+            <button class="num-btn">4</button>
+            <button class="num-btn">5</button>
+            <button class="num-btn">6</button>
+            <button class="num-btn">7</button>
+            <button class="num-btn">8</button>
+            <button class="num-btn">9</button>
+            <button class="action-btn" id="btn-clear">C</button>
+            <button class="num-btn">0</button>
+            <button class="action-btn" id="btn-enter">Enter</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').then(registration => {
+                    console.log('SW registered: ', registration);
+                }).catch(registrationError => {
+                    console.log('SW registration failed: ', registrationError);
+                });
+            });
+        }
+    </script>
+</body>
+</html>

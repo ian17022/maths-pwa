@@ -1,0 +1,21 @@
+{
+  "name": "Math Mastery PWA",
+  "short_name": "Math Mastery",
+  "description": "Improve your mental math and discount calculation skills.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#282a36",
+  "theme_color": "#282a36",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
